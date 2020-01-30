@@ -1,0 +1,11 @@
+header {
+  font-family: 'Kaushan Script', cursive;
+}
+
+.damaged {
+  filter: drop-shadow(2px 4px 6px #ff0000) contrast(1);
+}
+
+.hidden{
+  display: none !important;
+}
