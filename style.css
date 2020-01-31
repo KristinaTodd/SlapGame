@@ -1,6 +1,30 @@
 header {
+  height: 6vh;
   font-family: 'Kaushan Script', cursive;
   font-size: xx-large;
+}
+
+main {
+  height: 80vh;
+  background-image: url(./background-ocean.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+footer {
+  height: 14vh;
+  z-index: 1;
+}
+
+.pirate-ship {
+
+  z-index: 2;
+}
+
+.your-ship {
+
+  z-index: 2;
 }
 
 .damaged {

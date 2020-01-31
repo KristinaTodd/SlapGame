@@ -1,5 +1,8 @@
 let shipHealth = 100
 let yourShipHealth = 100
+let marginYourShip = 0
+let marginPirateShip = 0
+
 let damagers = {
   canon: { damage: 7, detriment: 5 },
   molotov: { damage: 3, detriment: 1 },
@@ -8,9 +11,10 @@ let damagers = {
 
 function playGame() {
   document.getElementById("game-area").classList.remove("hidden")
+  document.getElementById("play-area").classList.remove("hidden")
   document.getElementById("play-button").classList.add("hidden")
 
-  setInterval(gameTimer, 900)
+  setInterval(gameTimer, 700)
 }
 
 
@@ -20,12 +24,14 @@ function damageShip(damager) {
 
   updatePirateHealth()
 
+  marginPirate()
+
   if (shipHealth <= 50) {
     document.getElementById("pirate-ship").classList.add("damaged")
   }
 
   winGame()
-
+  loseGame()
 }
 
 function damageYourShip(damager) {
@@ -33,6 +39,7 @@ function damageYourShip(damager) {
   yourShipHealth = yourShipHealth - damageStrength
 
   updatePirateHealth()
+
 
   if (yourShipHealth <= 50) {
     document.getElementById("your-ship").classList.add("damaged")
@@ -60,6 +67,8 @@ function gameTimer() {
   yourShipHealth--
   updateYourShipHealth()
 
+  marginShip()
+
   if (yourShipHealth <= 50) {
     document.getElementById("your-ship").classList.add("damaged")
   }
@@ -77,6 +86,22 @@ function applyBandages() {
 
     setTimeout(bandageTimeOutOver, 4000);
   }
+}
+
+function marginPirate() {
+
+  if (shipHealth <= 50) {
+    marginPirateShip++
+  }
+  document.getElementById("pirate-game-area").style.marginTop = `${marginPirateShip}%`
+}
+
+function marginShip() {
+
+  if (yourShipHealth <= 50) {
+    marginYourShip++
+  }
+  document.getElementById("your-game-area").style.marginTop = `${marginYourShip}%`
 }
 
 function updatePirateHealth() {

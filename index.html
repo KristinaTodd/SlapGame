@@ -15,49 +15,51 @@
   <header class="container-fluid">
     <div class="row">
       <div class="col-12 bg-dark text-center text-white">
-        <h1>Pirates</h1>
+        <h1>Pirates!</h1>
       </div>
       <div class="col-12 bg-dark text-center p-2" id="play-button">
-        <button class="btn btn-danger " onclick="playGame()">PLAY</button>
+        <button class="btn btn-danger " onclick="playGame()">FIGHT</button>
       </div>
     </div>
   </header>
+
   <main class="container-fluid">
-
-    </div>
     <div class="row hidden" id="game-area">
-      <div class="col-6">
-        <div class="row">
-          <div class="col-12 p-2">
-            <img src="./pirate-ship-1.webp" alt="pirate-ship" width="300px" height="300px" id="pirate-ship" class="">
-          </div>
-          <div class="col-12 text-center">Pirate Ship Health: <span id="ship-health">100</span></div>
-          <div class="col-12 text-center m-1">
-            <button class="btn btn-dark" id="canon-ball"
-              onclick="damageShip('canon'); canonBallTimer(); damageYourShip('canon')">Canon
-              Ball</button>
-            <button class="btn btn-dark" id="molotov"
-              onclick="damageShip('molotov'); molotovTimer(); damageYourShip('molotov')">Molotov</button>
-            <button class="btn btn-dark" onclick="damageShip('rifle')">Rifle</button>
-          </div>
-        </div>
+      <div class="col-6 p-2 text-center pirate-ship" id="pirate-game-area">
+        <img src="./pirate-ship-1.webp" alt="pirate-ship" width="300px" height="300px" id="pirate-ship" class="">
       </div>
-      <div class="col-6">
-        <div class="row">
-          <div class="col-12">
-            <img src="./new-ship.png" id="your-ship" alt="your-ship" width="300px" height="320px">
-          </div>
-          <div class="col-12 text-center">Your Ship's Health: <span id="your-ship-health">100</span></div>
-          <div class="col-12 text-center">
-            <button id="bandages" class="btn btn-dark" onclick="applyBandages()">Apply Bandages</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-12">
-
+      <div class="col-6 text-center your-ship" id="your-game-area">
+        <img src="./new-ship.png" id="your-ship" alt="your-ship" width="300px" height="320px">
       </div>
     </div>
   </main>
+
+  <footer class="container-fluid bg-dark">
+    <div class="row hidden" id="play-area">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-12 text-center text-white">Pirate Ship Health: <span id="ship-health">100</span></div>
+          <div class="col-12 text-center m-1">
+            <button class="btn btn-light" id="canon-ball"
+              onclick="damageShip('canon'); canonBallTimer(); damageYourShip('canon')">Canon
+              Ball</button>
+            <button class="btn btn-light" id="molotov"
+              onclick="damageShip('molotov'); molotovTimer(); damageYourShip('molotov')">Molotov</button>
+            <button class="btn btn-light" onclick="damageShip('rifle')">Rifle</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-12 text-center text-white">Your Ship's Health: <span id="your-ship-health">100</span></div>
+          <div class="col-12 text-center">
+            <button id="bandages" class="btn btn-light" onclick="applyBandages()">Heal Your Crew</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
