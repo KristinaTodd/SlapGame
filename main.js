@@ -91,7 +91,7 @@ function applyBandages() {
 function marginPirate() {
 
   if (shipHealth <= 50) {
-    marginPirateShip++
+    marginPirateShip = marginPirateShip + 0.8
   }
   document.getElementById("pirate-game-area").style.marginTop = `${marginPirateShip}%`
 }
@@ -99,7 +99,7 @@ function marginPirate() {
 function marginShip() {
 
   if (yourShipHealth <= 50) {
-    marginYourShip++
+    marginYourShip = marginYourShip + 0.8
   }
   document.getElementById("your-game-area").style.marginTop = `${marginYourShip}%`
 }

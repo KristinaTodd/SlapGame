@@ -17,14 +17,23 @@ footer {
   z-index: 1;
 }
 
-.pirate-ship {
-
+#pirate-ship {
+  animation: ship-float 9s ease-in-out infinite;
   z-index: 2;
 }
 
-.your-ship {
-
+#your-ship {
+  animation: ship-float 9s ease-in-out infinite;
   z-index: 2;
+}
+
+@keyframes ship-float{
+    0%,100% {
+        transform: translateY(-5px) rotate(3deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(-3deg);
+    }
 }
 
 .damaged {
